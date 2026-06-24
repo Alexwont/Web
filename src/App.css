@@ -1,0 +1,1426 @@
+.steam-profile-container {
+  max-width: 950px; /* Incrementado para que no se vea minúsculo en pantallas grandes, estándar de Steam */
+  margin: 40px auto; /* Más aire vertical en monitores de alta resolución */
+  background: rgba(0, 0, 0, 0.75);
+  padding: 24px; /* Mayor balance de espacio interno */
+  border-radius: 4px;
+  box-shadow: 0 0 12px #000;
+  position: relative; /* Clave para el posicionamiento absoluto de los adornos */
+}
+
+.profile-header {
+  display: flex;
+  gap: 20px; 
+  margin-bottom: 25px; 
+}
+
+.profile-avatar {
+  width: 140px; /* Tamaño optimizado y equilibrado */
+  height: 140px;  
+  object-fit: cover;
+  border: 2px solid #000000;
+  padding: 2px;
+  background-color: #000000;
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-name {
+  color: #ffffff;
+  font-size: 24px; 
+  margin: 0 0 6px 0;
+  font-weight: normal;
+}
+
+.arrow-down {
+  font-size: 12px; 
+  color: #8f98a0;
+}
+
+.profile-summary {
+  color: #8f98a0;
+  font-size: 13px; 
+  margin-bottom: 10px;
+}
+
+.custom-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #54a5d4;
+  font-size: 14px; 
+  margin-bottom: 8px;
+}
+
+.view-more {
+  font-size: 11px; 
+  color: #ebebeb;
+  cursor: pointer;
+}
+
+/* LEVEL AND BADGES */
+.profile-level-badge {
+  width: 220px; 
+  display: flex;
+  flex-direction: column;
+  gap: 8px; 
+}
+
+.level-container {
+  font-size: 16px; 
+  color: white; 
+}
+
+.level-number {
+  border: 2px solid #d9a400;
+  border-radius: 50%;
+  padding: 2px 5px; 
+  font-weight: bold;
+}
+
+.badge-featured {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px; 
+  border-radius: 4px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.badge-title {
+  display: block;
+  color: #fff;
+  font-size: 12px; 
+}
+
+.badge-xp {
+  font-size: 10px; 
+  color: #8f98a0;
+}
+
+.edit-profile-btn {
+  background: linear-gradient( to bottom, #000000 0%, #000000 100% );
+  color: #67c1f5;
+  border: none;
+  padding: 6px; 
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+/* BODY LAYOUT */
+.profile-body {
+  display: flex;
+  gap: 30px; 
+}
+
+.main-content-column {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; 
+}
+
+.sidebar-column {
+  width: 260px; /* Ajuste proporcional para que luzca limpio */
+}
+
+.showcase-container {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.showcase-title {
+  font-size: 12px; /* Un poco más legible conservando el formato de Steam */
+  color: #8f98a0;
+  margin-top: 0;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.showcase-grid {
+  display: flex;
+  gap: 6px; 
+}
+
+.showcase-main img {
+  width: 100%;
+  max-width: 494px; /* Medida nativa exacta de un showcase de Steam */
+  height: auto;
+  border: 1px solid #000000;
+}
+
+.showcase-sidebar-pics {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
+}
+
+.showcase-sidebar-pics img {
+  width: 96px; /* Ancho real estandarizado */
+  height: 57px; /* Altura ideal fija para evitar deformaciones */
+  object-fit: cover;
+  border: 1px solid #3a3a3a;
+}
+
+.more-showcase {
+  background: #171a21;
+  text-align: center;
+  height: 57px;
+  line-height: 57px; /* Centrado vertical impecable */
+  font-size: 12px; 
+  border: 1px solid #3a3a3a;
+  color: #8f98a0;
+}
+
+/* SIDEBAR ELEMENTS */
+.online-status {
+  color: #57cbde;
+  font-size: 16px; 
+  margin-bottom: 12px;
+}
+
+.sidebar-block {
+  margin-bottom: 18px; 
+}
+
+.sidebar-block h4 {
+  font-size: 12px; 
+  color: #8f98a0;
+  font-weight: normal;
+  margin-bottom: 6px;
+}
+
+.count {
+  color: #ffffff;
+  float: right;
+}
+
+.awards-row, .badges-row {
+  display: flex;
+  gap: 6px; 
+}
+
+.profile-mini-badge {
+  width: 36px; 
+  height: 36px;
+  object-fit: contain;
+}
+
+.award-icon {
+  font-size: 16px; 
+}
+
+.link-item {
+  padding: 6px 0; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 13px; 
+  color: #9b9b9b;
+  cursor: pointer;
+}
+
+.link-item:hover {
+  color: #ffffff;
+}
+
+/* CONTENEDOR DE LA INSIGNIA */
+.badge-icon-holder {
+  width: 36px; 
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   AJUSTE DE LOS FONDOS FLOTANTES CON PORCENTAJES (FIJOS AL PERFIL)
+   ========================================================================== */
+
+/* EL PERRO DE UNDERTALE (TOBY) */
+.floating-dog {
+  position: absolute !important;
+  right: 102%; /* Se ancla exactamente al lado izquierdo exterior del contenedor */
+  top: 0px;       
+  width: 130px; /* Escalado adecuado para que no compita con el contenido */
+  height: auto;
+  image-rendering: pixelated; 
+  z-index: 11;
+}
+
+/* CANDELABRO: FIJO EN EL FONDO DERECHO */
+.floating-background-right-lower {
+  position: absolute !important;
+  left: 100%; /* Se ancla exactamente al lado derecho exterior del contenedor */
+  top: 140px; /* Alineado de manera estética con la barra lateral */
+  width: 450px;  
+  height: auto;
+  opacity: 0.10;  
+  pointer-events: none;
+  z-index: 1;
+}
+/* PONY: FIJO EN EL FONDO IZQUIERDO EXTERIOR */
+.floating-background-left {
+  position: absolute !important;
+  right: 120%;           /* Se pega al borde IZQUIERDO exterior del perfil */
+  top: 140px;            /* Misma altura inicial que el candelabro para que queden simétricos */
+  width: 430px;          /* Mismo ancho exacto para mantener la armonía */
+  height: auto;
+  opacity: 0.1  ;         /* Buena visibilidad sobre el fondo negro de la pantalla */
+  pointer-events: none;  /* No interfiere con los clics */
+  z-index: 1;
+}
+
+.profile-avatar {
+  width: 140px; 
+  height: 140px;  
+  object-fit: cover;
+  padding: 3px; /* Espacio para el borde brillante */
+  background-color: #000000;
+  
+  /* --- CONFIGURACIÓN DE LA ANIMACIÓN MONOCROMÁTICA --- */
+  border: 2px solid #ffffff; /* Inicia en blanco */
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  
+  /* Animación continua en bucle */
+  animation: steamGlow 5s ease-in-out infinite; 
+}
+
+/* --- EFECTO HOVER --- */
+.profile-avatar:hover {
+  transform: scale(1.03); 
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* --- ROTACIÓN EN BLANCO, GRIS Y NEGRO --- */
+@keyframes steamGlow {
+  0% {
+    border-color: #ffffff; /* Blanco brillante */
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+  }
+  33% {
+    border-color: #555555; /* Gris oscuro ceniza */
+    box-shadow: 0 0 6px rgba(85, 85, 85, 0.4);
+  }
+  66% {
+    border-color: #111111; /* Negro casi puro */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Resplandor mínimo */
+  }
+  100% {
+    border-color: #ffffff; /* Regresa al blanco puro */
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* ==========================================================================
+   PROPUESTA G: EL VACÍO CUÁNTICO (PARTÍCULAS FLOTANTES ERRÁTICAS)
+   ========================================================================== */
+
+/* Limpieza base de la página */
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+/* El contenedor principal fijo */
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1; /* Capa intermedia perfecta entre el fondo y el perfil */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Capa Izquierda: Partículas erráticas */
+.starfield::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  
+  /* Generamos píxeles esparcidos en el extremo izquierdo */
+  box-shadow: 
+    3vw 25vh rgba(255,255,255,0.25), 8vw 15vh rgba(255,255,255,0.15),
+    5vw 45vh rgba(255,255,255,0.3),  11vw 60vh rgba(255,255,255,0.2),
+    2vw 75vh rgba(255,255,255,0.35), 7vw 85vh rgba(255,255,255,0.15),
+    10vw 35vh rgba(255,255,255,0.25), 4vw 65vh rgba(255,255,255,0.3);
+    
+  /* Combinamos dos animaciones: una sube/baja y otra va de lado a lado */
+  animation: quantumVertical 22s ease-in-out infinite alternate, 
+             quantumHorizontalLeft 14s ease-in-out infinite alternate;
+}
+
+/* Capa Derecha: Partículas erráticas simétricas */
+.starfield::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  
+  /* Generamos píxeles esparcidos en el extremo derecho */
+  box-shadow: 
+    88vw 20vh rgba(255,255,255,0.3),  93vw 10vh rgba(255,255,255,0.2),
+    91vw 40vh rgba(255,255,255,0.25), 86vw 55vh rgba(255,255,255,0.35),
+    95vw 70vh rgba(255,255,255,0.15), 89vw 80vh rgba(255,255,255,0.25),
+    94vw 30vh rgba(255,255,255,0.3),  87vw 65vh rgba(255,255,255,0.15);
+    
+  animation: quantumVertical 18s ease-in-out infinite alternate, 
+             quantumHorizontalRight 16s ease-in-out infinite alternate;
+}
+
+/* --- ANIMACIONES CON MOVIMIENTOS ERRÁTICOS --- */
+
+/* Movimiento vertical de vaivén (simula flotación fluida) */
+@keyframes quantumVertical {
+  0% {
+    transform: translateY(0vh);
+  }
+  50% {
+    transform: translateY(-8vh); /* Sube un poco */
+  }
+  100% {
+    transform: translateY(4vh);  /* Baja un poco de su posición original */
+  }
+}
+
+/* Vaivén horizontal para el lado izquierdo */
+@keyframes quantumHorizontalLeft {
+  0% {
+    transform: translateX(0vw) scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(3vw) scale(1.2); /* Se mueve a la derecha y se agranda un pelo */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-1.5vw) scale(0.8); /* Se mueve a la izquierda */
+    opacity: 0.4;
+  }
+}
+
+/* Vaivén horizontal para el lado derecho */
+@keyframes quantumHorizontalRight {
+  0% {
+    transform: translateX(0vw) scale(1.1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(-2.5vw) scale(0.8); /* Se mete un poco hacia el perfil */
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(2vw) scale(1);
+    opacity: 0.3;
+  }
+}
+
+
+/* ==========================================================================
+   ANIMACIONES PARA LOS ELEMENTOS DE LA BARRA IZQUIERDA
+   ========================================================================== */
+
+/* 1. ANIMACIÓN DE MELLON (Efecto Flotante Sutil) */
+.floating-mellon-left {
+  position: absolute !important;
+  right: 113%;               
+  top: 150px;                
+  width: 250px;               
+  height: auto;
+  opacity: 0.85;             
+  pointer-events: none;      
+  z-index: 2;                
+  
+  /* Aplicamos la animación flotante */
+  animation: floatMellon 6s ease-in-out infinite alternate;
+}
+
+/* 2. ANIMACIÓN DEL PONY (Pulsación de Opacidad Cósmica) */
+.floating-background-left {
+  position: absolute !important;
+  right: 125%;
+  top: 500px !important;     
+  width: 250px;          
+  height: auto;
+  pointer-events: none;  
+  z-index: 1;
+  
+  /* Aplicamos una animación de brillo/opacidad lenta */
+  animation: pulsePony 8s ease-in-out infinite alternate;
+}
+
+
+/* --- DEFINICIÓN DE LOS KEYFRAMES --- */
+
+/* Movimiento arriba/abajo suave para Mellon */
+@keyframes floatMellon {
+  0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 5px rgba(217, 164, 0, 0.2));
+  }
+  100% {
+    transform: translateY(-12px); /* Sube ligeramente */
+    filter: drop-shadow(0 0 15px rgba(217, 164, 0, 0.5)); /* El brillo dorado se intensifica */
+  }
+}
+
+/* Desvanecimiento y escala sutil para el Caballo */
+@keyframes pulsePony {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 0.85; /* Se vuelve más nítido */
+    transform: scale(1.02); /* Se estira un mínimo porcentaje */
+  }
+}
+
+/* ==========================================================================
+   TAMAÑOS Y REJILLAS PARA LOS NUEVOS ICONOS DE LA BARRA LATERAL
+   ========================================================================== */
+
+/* Contenedor de Medallas: Alineación flexible con saltos de línea */
+.badges-row-custom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;             /* Separación limpia entre medallas */
+  margin-top: 8px;
+}
+
+/* Medalla individual: Mantiene la escala exacta de Steam (36px x 36px) */
+.badges-row-custom .profile-mini-badge {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;  /* Evita que los logos de Python/JS se estiren feo */
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  padding: 2px;
+}
+
+/* ==========================================================================
+   AJUSTE DE TAMAÑO EXACTO PARA LOS HOBBIES (IGUAL A LAS INSIGNIAS)
+   ========================================================================== */
+
+/* Cambiamos la rejilla por flex para que se agrupen pegaditos a la izquierda igual que arriba */
+.hobbies-grid-custom {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 6px;             /* El mismo espacio que usan tus insignias */
+  margin-top: 8px;
+}
+
+/* Forzamos a que cada contenedor de hobby no ocupe espacio extra */
+.hobby-item-icon {
+  width: 36px !important;   /* Tamaño exacto de tus insignias */
+  height: 36px !important;  /* Tamaño exacto de tus insignias */
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+/* Ajuste exacto para los archivos PNG dentro de hobbies */
+.hobbies-grid-custom img {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  object-fit: contain !important;
+}
+
+/* Ajuste exacto para que el emoji del control tenga la misma proporción visual */
+.hobby-item-icon .gamepad-emoji {
+  font-size: 26px !important; /* Ajustado para que visualmente calce con los 36px de los logos */
+  line-height: 1;
+  display: inline-block;
+}
+
+/* Efecto hover interactivo sutil */
+.hobby-item-icon:hover {
+  transform: translateY(-2px);
+}
+/* ==========================================================================
+   INSIGNIA NOSCRIPT REUBICADA DEBAJO DEL CANDELABRO (LADO DERECHO)
+   ========================================================================== */
+.floating-noscript-corner {
+  position: absolute !important; /* Cambiado a absolute para que acompañe el scroll del candelabro */
+  right: -450px;                  /* Alineado al extremo derecho de la página */
+  top: 720px;                   /* Ajustado para posicionarse justo debajo del arte del candelabro */
+  width: 270px;                  /* Mantiene su tamaño limpio */
+  height: auto;
+  z-index: 10;                  /* Capa correcta para los elementos decorativos */
+  opacity: 0.4;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+  transition: all 0.3s ease;
+}
+/* ==========================================================================
+   ESTILOS DE TAMAÑO EXACTO (36PX) PARA PREMIOS, HOBBIES, OS Y REDES SOCIALES
+   ========================================================================= */
+
+/* Forzamos a que todas las filas de bloques personalizados usen flex alineado */
+.hobbies-grid-custom,
+.badges-row-custom {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 6px;             /* El mismo espacio estándar de Steam */
+  margin-top: 8px;
+}
+
+/* Contenedor e icono interactivo (Ahora soporta enlaces <a> de forma nativa) */
+.hobby-item-icon,
+.profile-mini-badge {
+  width: 36px !important;   
+  height: 36px !important;  
+  background-color: transparent !important; 
+  border: none !important;
+  border-radius: 0 !important;
+  display: inline-flex !important; /* Asegura un comportamiento uniforme en enlaces */
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  text-decoration: none;   /* Quita cualquier subrayado azul de enlace */
+}
+
+/* Control estricto para CUALQUIER imagen dentro de estas categorías */
+.hobbies-grid-custom img,
+.badges-row-custom img,
+.sidebar-block img {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  object-fit: contain !important; /* Evita que Apple o Linux se achiquen o deformen */
+}
+
+/* Efecto hover interactivo global: ahora cambia el cursor a manito al pasar sobre los links */
+.hobby-item-icon:hover,
+.badges-row-custom img:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+}
+
+/* ==========================================================================
+   ESTILOS DE TAMAÑO EXACTO (36PX) PARA PREMIOS, HOBBIES, OS Y REDES SOCIALES
+   ========================================================================= */
+
+/* Forzamos a que todas las filas de bloques personalizados usen flex alineado */
+.hobbies-grid-custom,
+.badges-row-custom {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 6px;             /* El mismo espacio estándar de Steam */
+  margin-top: 8px;
+}
+
+/* Contenedor e icono interactivo */
+.hobby-item-icon,
+.profile-mini-badge {
+  width: 36px !important;   
+  height: 36px !important;  
+  background-color: transparent !important; 
+  border: none !important;
+  border-radius: 0 !important;
+  display: inline-flex !important; 
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  text-decoration: none;   
+}
+
+/* Control estricto para CUALQUIER imagen dentro de estas categorías */
+.hobbies-grid-custom img,
+.badges-row-custom img,
+.sidebar-block img {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  object-fit: contain !important; 
+}
+
+/* Efecto hover interactivo: Solo movimiento limpio hacia arriba, sin iluminación */
+.hobby-item-icon:hover,
+.badges-row-custom img:hover {
+  cursor: pointer;
+  transform: translateY(-3px); /* Animación de desplazamiento sutil */
+  filter: none !important;     /* Eliminamos por completo cualquier brillo o sombra */
+}
+
+
+/* ==========================================================================
+   INSIGNIA NOSCRIPT REUBICADA DEBAJO DEL CANDELABRO (LADO DERECHO)
+   ========================================================================== */
+.floating-noscript-corner {
+  position: absolute !important; 
+  right: 50px;                  
+  top: 720px;                   
+  width: 45px;                  
+  height: auto;
+  z-index: 10;                  
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+/* Dejamos la insignia flotante con una ligera reacción limpia también */
+.floating-noscript-corner:hover {
+  opacity: 1;
+  transform: scale(1.1) rotate(5deg); 
+}
+
+/* ==========================================================================
+   INSIGNIA OFFSCRIPT REUBICADA EN LA ESQUINA IZQUIERDA
+   ========================================================================== */
+.floating-noscript-corner {
+  position: absolute !important; /* Se mantiene fija acompañando el fondo */
+  left:  1160px;                   /* ¡CORREGIDO! Ahora se alinea al extremo izquierdo */
+  top:  700px;                   /* Ajusta este valor si quieres que suba o baje en el eje vertical */
+  width: 300px;                  
+  height: auto;
+  z-index: 10;                  
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+
+/* Efecto dinámico limpio al pasar el mouse por encima */
+.floating-noscript-corner:hover {
+  opacity: 1;
+  transform: scale(1.1) rotate(-5deg); /* Gira levemente hacia la izquierda al hacer hover */
+}
+
+/* ==========================================================================
+   INSIGNIA OFFSCRIPT CON ANIMACIÓN AUTOMÁTICA SIMPLE (SIN HOVER)
+   ========================================================================== */
+.floating-noscript-corner {
+  position: absolute !important; 
+  left: 1160px;                   
+  top: 650px;                   
+  width: 300px;                  
+  height: auto;
+  z-index: 10;                  
+  opacity: 0.2;
+  pointer-events: none; /* ¡CLAVE! Hace que la imagen sea invisible a los toques y clics */
+  
+  /* Aplicamos la animación automática */
+  animation: flotarSutil 4s ease-in-out infinite;
+}
+
+/* Definición del movimiento de la animación */
+@keyframes flotarSutil {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px); /* Sube 8 píxeles a la mitad del ciclo */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ==========================================================================
+   ANIMACIÓN AUTOMÁTICA PARA EL CANDELABRO (LADO DERECHO)
+   ========================================================================== */
+.floating-background-right-lower {
+  position: absolute !important;
+  right: 0;                     /* Mantiene su alineación pegada a la derecha */
+  top: -80px;                   /* Tu posición vertical actual */
+  z-index: 1;
+  pointer-events: none;         /* Desactiva cualquier interacción o clic */
+  
+  /* Aplicamos una animación de balanceo sutil en bucle */
+  animation: balanceoCandelabro 6s ease-in-out infinite;
+  transform-origin: top center; /* El punto de eje se fija arriba para simular que cuelga */
+}
+
+/* Definición del movimiento: un balanceo e iluminación muy sutil */
+@keyframes balanceoCandelabro {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: rotate(2deg);    /* Se inclina levemente hacia un lado */
+    opacity: 0.2;               /* Simula un sutil parpadeo de las luces */
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 0.2;
+  }
+}
+/* ==========================================================================
+   ANIMACIÓN DE CUERDA (DESLIZAMIENTO IZQUIERDA A DERECHA) PARA TOBY FOX
+   ========================================================================== */
+.floating-dog {
+  position: absolute !important;
+  left: -450px;                   /* Empezará un poco más a la izquierda */
+  top: 10px;                   
+  z-index: 5;
+  pointer-events: none;         
+
+  /* Animación fluida de ida y vuelta */
+  animation: tobyEnCuerda 8s ease-in-out infinite;
+}
+
+@keyframes tobyEnCuerda {
+  0% {
+    transform: translateX(0px) scaleX(1); /* Empieza mirando a la derecha */
+  }
+  48% {
+    transform: translateX(250px) scaleX(1); /* Llega al extremo derecho */
+  }
+  50% {
+    transform: translateX(250px) scaleX(-1); /* Se voltea (espejo) para regresar */
+  }
+  98% {
+    transform: translateX(0px) scaleX(-1); /* Regresa al punto inicial volteado */
+  }
+  100% {
+    transform: translateX(0px) scaleX(1); /* Se voltea de nuevo al frente original */
+  }
+}
+/* ==========================================================================
+   FUENTES E IMPORTACIONES (MANTENEMOS LAS MISMAS)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;700&family=Motiva+Sans:wght@300;400;700&display=swap');
+
+/* ==========================================================================
+   ESTILOS AVANZADOS Y ANIMACIONES PARA EL ENCABEZADO
+   ========================================================================== */
+
+/* NOMBRE DE USUARIO CON EFECTO INTERACTIVO */
+.profile-name {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 700;
+  font-size: 28px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  display: inline-block;
+  transition: text-shadow 0.15s ease;
+}
+
+/* Efecto de aberración cromática / glitch cyber al pasar el mouse por encima de tu nombre */
+.profile-name:hover {
+  cursor: pointer;
+  text-shadow: -2px 0 #ff0055, 2px 0 #00ffcc;
+}
+
+.profile-name .arrow-down {
+  font-size: 14px;
+  color: #66c0f4;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* UBICACIÓN */
+.profile-summary {
+  font-family: 'Motiva Sans', sans-serif !important;
+  font-weight: 300;
+  font-size: 13px;
+  color: #8f98a0;
+  margin-top: 4px;
+}
+
+/* ESTADO PERSONALIZADO CON CURSOR DE TERMINAL */
+.custom-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.custom-status .status-text {
+  font-family: 'Press Start 2P', cursive !important;
+  font-size: 10px;
+  color: #66c0f4;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+/* Añade un cursor simulado [ _ ] que parpadea después de la palabra "Dev" */
+.custom-status .status-text::after {
+  content: '_';
+  margin-left: 4px;
+  color: #66c0f4;
+  animation: parpadeoTerminal 0.8s steps(1) infinite;
+}
+
+/* RESUMEN DETALLADO CON BORDE DINÁMICO */
+.profile-detailed-summary {
+  font-family: 'Motiva Sans', sans-serif !important;
+  font-weight: 400;
+  font-size: 14px;
+  color: #b8b6b4;
+  line-height: 1.6;
+  margin-top: 16px;
+  padding-top: 12px;
+  max-width: 520px;
+  /* Línea divisoria superior con degradado sutil de Steam */
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, rgba(102,192,244,0.4) 0%, rgba(102,192,244,0) 80%) 1;
+}
+
+/* ==========================================================================
+   KEYFRAMES DE LAS NUEVAS ANIMACIONES
+   ========================================================================== */
+@keyframes parpadeoTerminal {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+/* ==========================================================================
+   MARCO DE AVATAR ANIMADO (ESTILO TIENDA DE PUNTOS DE STEAM)
+   ========================================================================== */
+
+/* ==========================================================================
+   DISEÑO DE MARCO: MELLON AMARILLO / FOTO EN TONALIDAD NEGRA
+   ========================================================================== */
+
+.avatar-frame-container.monochrome-frame {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  display: inline-block;
+  padding: 0;
+  background: #120e04;         /* Fondo negro-ámbar ultra oscuro */
+  border-radius: 8px;          /* Esquinas suavizadas estilo Steam */
+  overflow: hidden;
+  
+  /* Borde e iluminación exterior en la tonalidad amarilla de Mellon */
+  border: 1px solid rgba(255, 196, 0, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* El elemento animado: Rotación fluida en la gama de amarillos Mellon */
+.avatar-frame-container.monochrome-frame::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  
+  /* Gradiente cónico con amarillo brillante, oro y ámbar */
+  background: conic-gradient(
+    transparent, 
+    #ffd700,                  /* Oro brillante */
+    #ffaa00,                  /* Ámbar Mellon */
+    rgba(255, 215, 0, 0.2),   
+    transparent 40%
+  );
+  
+  animation: rotacionMellonAmarillo 6s linear infinite;
+}
+
+/* FOTO DE PERFIL: Mantiene la tonalidad negra y desaturada */
+.avatar-frame-container.monochrome-frame img {
+  position: relative;
+  z-index: 3;                  /* Por encima de la animación del marco */
+  width: calc(100% - 6px) !important; /* Deja un grosor de marco de 3px */
+  height: calc(100% - 6px) !important;
+  object-fit: cover !important;
+  margin: 3px;                 /* Centra la foto perfectamente */
+  border-radius: 6px;
+  display: block;
+  background-color: #000000;   /* Fondo negro absoluto de respaldo */
+
+  /* Filtros para la tonalidad negra */
+  opacity: 0.5;                /* Opacidad reducida */
+  filter: grayscale(100%) contrast(1.2); /* Blanco y negro puro con buen contraste */
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Capa intermedia para recortar el degradado y dar profundidad */
+.avatar-frame-container.monochrome-frame::after {
+  content: '';
+  position: absolute;
+  inset: 2px;                  
+  background: #171510;         /* Bloqueo oscuro interno */
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: inset 0 0 10px rgba(255, 170, 0, 0.3);
+}
+
+/* AL PASAR EL MOUSE: La foto recupera su brillo y color original */
+.avatar-frame-container.monochrome-frame:hover img {
+  opacity: 1;
+  filter: grayscale(0%) contrast(1);
+}
+
+/* ==========================================================================
+   KEYFRAMES: ANIMACIÓN DEL MARCO AMARILLO
+   ========================================================================== */
+@keyframes rotacionMellonAmarillo {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   ESTILOS PREMIUM PARA EL EXPOSITOR DE COMPAÑEROS - ESPACIO MÁS GRANDE
+   ========================================================================== */
+
+.unique-squad-showcase {
+  border: 1px solid rgba(255, 170, 0, 0.15);
+  background: rgba(23, 26, 33, 0.4);
+}
+
+/* Contenedor centralizado */
+.showcase-grid {
+  display: table;
+  margin: 0 auto;
+}
+
+/* Foto principal de la izquierda */
+.showcase-main-item,
+.showcase-main {
+  display: table-cell;
+  vertical-align: top;
+  position: relative;
+  width: 500px;
+  height: 392px; /* Aumentado proporcionalmente para emparejar la barra lateral */
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Barra lateral derecha con más espacio para que se aprecien las fotos */
+.showcase-sidebar-pics {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 10px; 
+}
+
+/* ¡CAMBIO AQUÍ! Contenedores laterales más grandes (125px x 95px) */
+.sidebar-pic-wrapper {
+  position: relative;
+  width: 125px;   /* Antes: 100px */
+  height: 95px;   /* Antes: 80px */
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 4px; /* Espaciado vertical limpio entre fotos */
+}
+
+.sidebar-pic-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+/* Ajustes de imagen y efectos */
+.squad-img-large {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: contrast(1.05) brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+.showcase-main-item:hover .squad-img-large {
+  filter: contrast(1.1) brightness(1.05);
+}
+
+.squad-tag-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(18, 14, 4, 0.85);
+  border: 1px solid #ffaa00;
+  color: #ffd700;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.squad-member {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.squad-member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: grayscale(20%) brightness(0.9);
+  transition: all 0.25s ease;
+}
+
+.squad-member:hover img {
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.03);
+}
+
+
+/* ==========================================================================
+   MODIFICACIÓN EXCLUSIVA DE TAMAÑOS (SIN ALTERAR NADA MÁS)
+   ========================================================================== */
+
+/* Foto principal de la izquierda: Ajustada a 482px para compensar el espacio */
+.showcase-main-item,
+.showcase-main {
+  display: table-cell;
+  vertical-align: top;
+  position: relative;
+  width: 482px;  /* Calibrado para mantener el equilibrio de Steam */
+  height: 392px; /* Altura total que ocupan las 4 fotos de la derecha combinadas */
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Barra lateral derecha */
+.showcase-sidebar-pics {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 10px; 
+}
+
+/* Fotos de la derecha: Espacio más grande asignado */
+.sidebar-pic-wrapper {
+  position: relative;
+  width: 125px;   /* Tamaño grande solicitado */
+  height: 95px;   /* Altura que empareja perfectamente la cuadrícula */
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 4px; /* Margen de separación vertical estándar */
+}
+
+/* Quita el margen de la última foto para no romper el alto total */
+.sidebar-pic-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   OPTIMIZACIÓN DE VISIBILIDAD PARA EL SQUAD (ENFOQUE DE ROSTROS)
+   ========================================================================== */
+
+/* Barra lateral derecha: Añadimos un poco más de separación entre las fotos */
+.showcase-sidebar-pics {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 12px; /* Mayor separación limpia con la foto principal */
+}
+
+/* Contenedor de cada miembro: Bordes nítidos y presentación premium */
+.squad-member {
+  border: 1px solid rgba(255, 170, 0, 0.25); /* Fino borde amarillo Mellon base */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  background-color: #171a21;
+}
+
+/* CALIBRACIÓN INDIVIDAL DE ENCUADRE:
+   Ajustamos el eje vertical (Y) para que la cámara enfoque exactamente las caras
+*/
+
+/* Compañero 1 (Foto vertical de perfil): Centrado perfecto */
+.showcase-sidebar-pics .squad-member:nth-child(1) img {
+  object-position: center 20%; 
+}
+
+/* Compañero 3 (Foto contrapicada mirando al techo): Enfoca desde abajo hacia la cara */
+.showcase-sidebar-pics .squad-member:nth-child(2) img {
+  object-position: center 30%; 
+}
+
+/* Compañero 4 (Foto panorámica mirando de lado): Ajuste centrado limpio */
+.showcase-sidebar-pics .squad-member:nth-child(3) img {
+  object-position: center 40%; 
+}
+
+/* Fotoperro (Mascota legendaria con brazos cruzados): Enfoque completo */
+.squad-mascot-img {
+  object-position: center center;
+}
+
+/* HOVER INTERACTIVO: Al pasar el cursor, el miembro brilla e intensifica su color */
+.squad-member:hover {
+  border-color: #ffd700; /* Oro brillante */
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.squad-member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.95) contrast(1.05); /* Mayor claridad para que no se vean oscuros */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.squad-member:hover img {
+  filter: brightness(1.15) contrast(1.1); /* Resalta el rostro iluminándolo */
+  transform: scale(1.04); /* Expande sutilmente la foto dentro de su recuadro */
+}
+/* ==========================================================================
+   SECCIÓN DE CURSOS: TEXTO PLANO ESTILO TERMINAL / STEAM
+   ========================================================================== */
+
+.courses-list-simple {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Espaciado sutil entre cada curso */
+  padding-top: 4px;
+}
+
+.course-text-item {
+  font-size: 13px;
+  color: #c4c4c4; /* Gris claro muy limpio */
+  font-family: monospace, 'Motiva Sans', sans-serif; /* Toque hacker/dev sutil */
+  padding-left: 8px;
+  border-left: 2px solid rgba(255, 170, 0, 0.4); /* Línea amarilla Mellon muy fina a la izquierda */
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Efecto hover suave al pasar el cursor por encima del texto */
+.course-text-item:hover {
+  color: #ffd700; /* Se ilumina en amarillo oro */
+  border-color: #ffaa00; /* La línea izquierda se intensifica */
+}
+
+/* ==========================================================================
+   ESTILOS PREMIUM PARA EL EXPOSITOR DE COMPAÑEROS (CCOMP SQUAD)
+   ========================================================================== */
+
+.unique-squad-showcase {
+  border: 1px solid rgba(255, 170, 0, 0.15);
+  background: rgba(23, 26, 33, 0.4);
+}
+
+/* Contenedor flexible centrado que alinea la foto grande con las miniaturas */
+.unique-squad-showcase .showcase-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px; /* Espacio limpio entre el líder y los miembros */
+}
+
+/* Elemento del compañero principal (Líder de Lobby) */
+.showcase-main-item {
+  position: relative;
+  width: 482px;
+  height: 392px; /* Altura idéntica a la suma de la columna derecha */
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.squad-img-large {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: contrast(1.05) brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+.showcase-main-item:hover .squad-img-large {
+  filter: contrast(1.1) brightness(1.05);
+}
+
+.squad-tag-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(18, 14, 4, 0.85);
+  border: 1px solid #ffaa00;
+  color: #ffd700;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Columna lateral de los miembros: Espacio amplio y orden vertical directo */
+.unique-squad-showcase .showcase-sidebar-pics {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Separación uniforme entre tarjetas */
+}
+
+/* Contenedores de fotos más grandes para máxima visibilidad */
+.sidebar-pic-wrapper {
+  position: relative;
+  width: 125px;   
+  height: 95px;   
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* Estilo y enfoque nítido de los rostros en el aula */
+.squad-member {
+  border: 1px solid rgba(255, 170, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  background-color: #171a21;
+}
+
+.squad-member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.95) contrast(1.05);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Calibración precisa para que se vean bien las caras en las miniaturas */
+.unique-squad-showcase .showcase-sidebar-pics .squad-member:nth-child(1) img {
+  object-position: center 20%; 
+}
+.unique-squad-showcase .showcase-sidebar-pics .squad-member:nth-child(2) img {
+  object-position: center 30%; 
+}
+.unique-squad-showcase .showcase-sidebar-pics .squad-member:nth-child(3) img {
+  object-position: center 40%; 
+}
+.squad-mascot-img {
+  object-position: center center;
+}
+
+/* Efecto hover iluminado estilo Mellon */
+.squad-member:hover {
+  border-color: #ffd700;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.squad-member:hover img {
+  filter: brightness(1.15) contrast(1.1);
+  transform: scale(1.04);
+}
+
+/* Capa del contador superior (+1) encima del perro */
+.more-showcase-container { 
+  position: relative; 
+}
+
+.more-showcase-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+  font-weight: bold;
+}
+
+.more-showcase-overlay.squad-overlay-yellow {
+  background: rgba(18, 14, 4, 0.75); 
+  color: #ffaa00;                   
+  border: 1px solid rgba(255, 170, 0, 0.3);
+  font-size: 20px;
+  text-shadow: 0 0 8px rgba(255, 170, 0, 0.5);
+}
+
+/* Tooltips */
+.member-tooltip {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: #171a21;
+  color: #ffd700;
+  padding: 2px 6px;
+  font-size: 10px;
+  border: 1px solid #ffaa00;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.squad-member:hover .member-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* ==========================================================================
+   SECCIÓN DE CURSOS (TEXTO SIMPLE ABAJO DE LAS INSIGNIAS)
+   ========================================================================== */
+
+.courses-list-simple {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 4px;
+}
+
+.course-text-item {
+  font-size: 13px;
+  color: #c4c4c4;
+  font-family: monospace, 'Motiva Sans', sans-serif;
+  padding-left: 8px;
+  border-left: 2px solid rgba(255, 170, 0, 0.4);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.course-text-item:hover {
+  color: #ffd700;
+  border-color: #ffaa00;
+}
+
+/* ==========================================================================
+   CONTROL DE POSICIÓN Y OPACIDAD (ESTRICTAMENTE FUNCIONAL)
+   ========================================================================== */
+
+.soad-display-frame {
+  position: absolute; /* Permite moverlo libremente con top/left */
+  
+  /* Ajustes de posición */
+  top: 790px;         /* Cambia este número para bajarlo o subirlo */
+  left: 50%;          /* Posición horizontal */
+  transform: translateX(-50%); /* Mantiene el centrado horizontal */
+  
+  /* Tamaño de la imagen */
+  width: 619px; 
+  height: 380px;
+  
+  /* Capa */
+  z-index: 2;
+}
+
+.soad-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.2;       /* Opacidad base */
+  transition: opacity 0.3s ease;
+}
+
+/* Opacidad completa al pasar el cursor */
+.soad-display-frame:hover .soad-main-image {
+  opacity: 1;
+}
